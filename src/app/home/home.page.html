@@ -14,7 +14,19 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-button (click)="pickFile()">Pick File</ion-button>
+    @if (result(); as r) {
+      <pre>
+      @for (item of r.files; track $index) {
+        <code>{{prettyFile(item) | json}}</code>      
+      }
+    </pre>
+    }
+    @if (error(); as err) {
+      <pre class="error">
+        <code>{{err | json}}</code>
+        <code>{{err.message}}</code>
+      </pre>
+    }
   </div>
 </ion-content>
