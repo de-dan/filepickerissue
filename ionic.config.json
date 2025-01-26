@@ -1,0 +1,7 @@
+{
+  "name": "filepickerissue",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
